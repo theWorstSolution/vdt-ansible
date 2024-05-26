@@ -1,0 +1,17 @@
+- name: Copy frontend files
+  copy:
+    src: "{{frontendPath}}"
+    dest: /opt/frontend
+
+- name: Build Docker image for frontend
+  docker_image:
+    name: frontend
+    path: /opt/frontend
+
+- name: Run frontend container
+  docker_container:
+    name: frontend
+    image: frontend
+    state: started
+    ports:
+      - "{{frontendHostPort}}:{{frontendContainerPort}}"

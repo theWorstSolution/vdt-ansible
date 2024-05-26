@@ -1,0 +1,3 @@
+frontendPath: ../vdt-fe
+frontendContainerPort: 3000
+frontendHostPort: 3001

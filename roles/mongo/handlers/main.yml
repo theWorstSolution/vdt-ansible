@@ -1,0 +1,6 @@
+# roles/mongodb/handlers/main.yml
+- name: Restart MongoDB
+  service:
+    name: mongod
+    state: restarted
+  become: true

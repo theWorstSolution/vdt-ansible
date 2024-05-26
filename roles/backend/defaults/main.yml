@@ -1,0 +1,3 @@
+backendPath: ../vdt-be
+backendContainerPort: 3000
+backendHostPort: 3000

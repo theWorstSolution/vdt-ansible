@@ -1,0 +1,14 @@
+- hosts: dbservers
+  become: true
+  roles:
+    - mongo
+
+- hosts: backends
+  become: true
+  roles:
+    - backend
+
+- hosts: frontends
+  become: true
+  roles:
+    - frontend

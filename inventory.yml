@@ -1,0 +1,21 @@
+all:
+  hosts:
+    frontend:
+      ansible_host: 192.168.1.100
+      ansible_user: myuser
+    backend:
+      ansible_host: 192.168.1.101
+      ansible_user: myuser
+    dbserver:
+      ansible_host: 192.168.1.102
+      ansible_user: myuser
+  children:
+    frontends:
+      hosts:
+        frontend:
+    backends:
+      hosts:
+        backend:
+    dbservers:
+      hosts:
+        dbserver:

@@ -1,0 +1,11 @@
+- name: Install MongoDB
+  apt:
+    name: mongodb
+    state: present
+
+- name: Configure MongoDB port
+  template:
+    src: mongod.conf.j2
+    dest: /etc/mongod.conf
+  notify:
+    - Restart MongoDB

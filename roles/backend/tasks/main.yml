@@ -1,0 +1,17 @@
+- name: Copy backend files
+  copy:
+    src: "{{backendPath}}"
+    dest: /opt/backend
+
+- name: Build Docker image for backend
+  docker_image:
+    name: backend
+    path: /opt/backend
+
+- name: Run backend container
+  docker_container:
+    name: backend
+    image: backend
+    state: started
+    ports:
+      - "{{backendHostPort}}:{{backendContainerPort}}"
